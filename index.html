@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jati Murni Furniture</title>
+    
+    <style>
+        /* 1. Pengaturan Dasar */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9; /* Warna latar abu muda */
+        }
+
+        /* 2. Header (Bagian Atas) */
+        header {
+            background-color: #8B4513; /* Warna Coklat Kayu */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 3. Container Produk (Agar rapi di tengah) */
+        .container {
+            width: 80%;
+            margin: 20px auto; /* Posisi tengah */
+            display: flex; /* Agar produk berjejer ke samping */
+            gap: 20px; /* Jarak antar produk */
+            flex-wrap: wrap; /* Agar turun ke bawah kalau layar sempit */
+        }
+
+        /* 4. Kartu Produk (Kotak pembungkus kursi) */
+        .kartu-produk {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px; /* Sudut melengkung */
+            width: 300px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* Mengatur Gambar agar tidak gepeng */
+        .kartu-produk img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .harga {
+            color: #8B4513;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* 5. Tombol Beli */
+        .tombol-beli {
+            background-color: #25D366; /* Warna Hijau WA */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none; /* Hilangkan garis bawah link */
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .tombol-beli:hover {
+            background-color: #128C7E; /* Warna hijau gelap saat disentuh mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Jati Murni Furniture</h1>
+        <p>Spesialis Kayu Jati Asli Jepara</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="kartu-produk">
+            <img src="kursi.jpg" alt="Kursi Jati Minimalis">
+            <h3>Kursi Jati Minimalis</h3>
+            <p>Cocok untuk ruang tamu modern. Bahan kayu jati asli dengan finishing natural.</p>
+            <p class="harga">Rp 750.000</p>
+            
+            <a href="https://wa.me/628123456789?text=Halo%20saya%20mau%20pesan%20Kursi%20Jati" class="tombol-beli" target="_blank">
+                Beli via WhatsApp
+            </a>
+        </div>
+
+        <div class="kartu-produk">
+            <img src="Lemari.jpg" alt="Lemari Baju"> 
+            <h3>Lemari Baju 2 Pintu</h3>
+            <p>Kuat dan tahan rayap.</p>
+            <p class="harga">Rp 2.500.000</p>
+            
+            <a href="https://wa.me/628123456789?text=Halo%20saya%20mau%20pesan%20Meja%20Makan" class="tombol-beli" target="_blank">
+                Beli via WhatsApp
+            </a>
+        </div>
+
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #666;">
+        <p>&copy; 2026 Jati Murni Furniture. Dibuat dengan HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
