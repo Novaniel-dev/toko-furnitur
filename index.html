@@ -3,111 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jati Murni Furniture</title>
+    <title>Jati Murni Furniture - Pusat Mebel Jepara</title>
     
     <style>
-        /* 1. Pengaturan Dasar */
+        /* === 1. GLOBAL STYLE === */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font lebih modern */
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* Warna latar abu muda */
+            background-color: #f4f4f4;
+            color: #333;
         }
 
-        /* 2. Header (Bagian Atas) */
-        header {
-            background-color: #8B4513; /* Warna Coklat Kayu */
+        /* === 2. NAVIGATION BAR (MENU ATAS) === */
+        nav {
+            background-color: #5D4037; /* Coklat tua elegan */
+            display: flex;
+            justify-content: space-between; /* Logo di kiri, Menu di kanan */
+            align-items: center;
+            padding: 15px 50px;
             color: white;
-            padding: 20px;
+            position: sticky; /* Menu nempel saat discroll */
+            top: 0;
+            z-index: 100; /* Agar menu selalu di atas tumpukan elemen lain */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .menu ul li a:hover {
+            color: #FFD700; /* Warna emas saat disentuh */
+        }
+
+        /* === 3. HERO SECTION (BANNER BESAR) === */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg'); 
+            /* Tips: Ganti 'hero-bg.jpg' dengan gambar ruang tamu yang luas */
+            background-color: #8B4513; /* Warna cadangan jika gambar tidak ada */
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #FFD700;
+            color: #5D4037;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            transform: scale(1.05); /* Efek membesar sedikit */
+        }
+
+        /* === 4. FITUR KEUNGGULAN === */
+        .features {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: white;
+            gap: 30px;
             text-align: center;
         }
 
-        /* 3. Container Produk (Agar rapi di tengah) */
-        .container {
-            width: 80%;
-            margin: 20px auto; /* Posisi tengah */
-            display: flex; /* Agar produk berjejer ke samping */
-            gap: 20px; /* Jarak antar produk */
-            flex-wrap: wrap; /* Agar turun ke bawah kalau layar sempit */
+        .feature-item {
+            max-width: 200px;
         }
 
-        /* 4. Kartu Produk (Kotak pembungkus kursi) */
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #8B4513;
+        }
+
+        /* === 5. PRODUK SECTION === */
+        .section-title {
+            text-align: center;
+            margin-top: 40px;
+            color: #5D4037;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .kartu-produk {
             background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px; /* Sudut melengkung */
-            width: 300px;
+            border: none; /* Border dihapus ganti shadow */
+            border-radius: 10px;
+            width: 280px;
             padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Bayangan lebih halus */
+            transition: 0.3s;
         }
 
-        /* Mengatur Gambar agar tidak gepeng */
+        .kartu-produk:hover {
+            transform: translateY(-5px); /* Efek naik saat disentuh */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
         .kartu-produk img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
         .harga {
-            color: #8B4513;
-            font-size: 1.2em;
+            color: #B22222; /* Merah bata untuk harga */
+            font-size: 1.3em;
             font-weight: bold;
+            margin: 10px 0;
         }
 
-        /* 5. Tombol Beli */
         .tombol-beli {
-            background-color: #25D366; /* Warna Hijau WA */
+            background-color: #25D366;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none; /* Hilangkan garis bawah link */
+            padding: 10px 0;
+            text-decoration: none;
             border-radius: 5px;
-            display: inline-block;
+            display: block; /* Agar tombol memenuhi lebar kartu */
             margin-top: 10px;
             font-weight: bold;
+            text-align: center;
         }
 
         .tombol-beli:hover {
-            background-color: #128C7E; /* Warna hijau gelap saat disentuh mouse */
+            background-color: #128C7E;
+        }
+
+        /* === 6. FOOTER === */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            margin: 0 10px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Jati Murni Furniture</h1>
-        <p>Spesialis Kayu Jati Asli Jepara</p>
-    </header>
+    <nav>
+        <div class="logo">JatiMurni.</div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Katalog</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <div class="hero">
+        <h1>Sentuhan Alam di Rumah Anda</h1>
+        <p>Koleksi furnitur kayu jati asli dengan desain modern dan tahan lama.</p>
+        <a href="#katalog" class="cta-button">Lihat Koleksi Terbaru</a>
+    </div>
+
+    <div class="features">
+        <div class="feature-item">
+            <div class="feature-icon">🌳</div>
+            <h3>100% Kayu Asli</h3>
+            <p>Menggunakan kayu jati tua pilihan dari Jepara.</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🔨</div>
+            <h3>Garansi 10 Tahun</h3>
+            <p>Jaminan konstruksi kokoh dan anti rayap.</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🚚</div>
+            <h3>Gratis Ongkir</h3>
+            <p>Untuk pengiriman wilayah Jawa & Bali.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="katalog">Produk Terlaris</h2>
+    
     <div class="container">
         
         <div class="kartu-produk">
             <img src="kursi.jpg" alt="Kursi Jati Minimalis">
-            <h3>Kursi Jati Minimalis</h3>
-            <p>Cocok untuk ruang tamu modern. Bahan kayu jati asli dengan finishing natural.</p>
+            <h3>Kursi Jati Scandinavian</h3>
+            <p>Desain minimalis modern, busa empuk, rangka jati solid.</p>
             <p class="harga">Rp 750.000</p>
-            
-            <a href="https://wa.me/628123456789?text=Halo%20saya%20mau%20pesan%20Kursi%20Jati" class="tombol-beli" target="_blank">
-                Beli via WhatsApp
-            </a>
+            <a href="https://wa.me/628123456789?text=Halo%20saya%20tertarik%20Kursi%20Jati" class="tombol-beli" target="_blank">Pesan Sekarang</a>
         </div>
 
         <div class="kartu-produk">
-            <img src="Lemari.jpg" alt="Lemari Baju"> 
-            <h3>Lemari Baju 2 Pintu</h3>
-            <p>Kuat dan tahan rayap.</p>
+            <img src="lemari.jpg" alt="Lemari Baju"> 
+            <h3>Lemari 2 Pintu Klasik</h3>
+            <p>Ukiran tangan asli, finishing melamine gloss.</p>
             <p class="harga">Rp 2.500.000</p>
-            
-            <a href="https://wa.me/628123456789?text=Halo%20saya%20mau%20pesan%20Meja%20Makan" class="tombol-beli" target="_blank">
-                Beli via WhatsApp
-            </a>
+            <a href="https://wa.me/628123456789?text=Halo%20saya%20tertarik%20Lemari%202%20Pintu" class="tombol-beli" target="_blank">Pesan Sekarang</a>
+        </div>
+
+         <div class="kartu-produk">
+            <img src="kursi.jpg" alt="Meja Rias"> 
+            <h3>Meja Rias Kartini</h3>
+            <p>Dilengkapi cermin oval dan kursi puff yang nyaman.</p>
+            <p class="harga">Rp 1.200.000</p>
+            <a href="https://wa.me/628123456789?text=Halo%20saya%20tertarik%20Meja%20Rias" class="tombol-beli" target="_blank">Pesan Sekarang</a>
         </div>
 
     </div>
 
-    <footer style="text-align: center; padding: 20px; color: #666;">
-        <p>&copy; 2026 Jati Murni Furniture. Dibuat dengan HTML & CSS.</p>
+    <footer>
+        <h3>Jati Murni Furniture</h3>
+        <p>Jl. Pemuda No. 45, Jepara, Jawa Tengah</p>
+        <div class="footer-links">
+            <a href="#">Instagram</a> | 
+            <a href="#">Facebook</a> | 
+            <a href="#">Tokopedia</a>
+        </div>
+        <br>
+        <p style="font-size: 0.8em;">&copy; 2026 Copyright Yoga Novansah. All Rights Reserved.</p>
     </footer>
 
 </body>
